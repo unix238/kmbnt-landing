@@ -87,7 +87,6 @@ html {
 
 .header {
     background: #211D29;
-    height: 200vh;
     padding-top: 55px;
     color: #fff;
 }
@@ -259,10 +258,10 @@ html {
 
 .online__content {
     display: flex;
-    /* justify-content: space-between; */
     align-items: center;
-    height: 50vh;
     margin-top: 200px;
+    /* padding-bottom: 200px; */
+    /* height: 50vh; */
 }
 
 .online__text {
@@ -322,10 +321,6 @@ html {
 /* --------------- */
 /* About SECTION */
 /* --------------- */
-
-.about {
-    margin-top: 285px;
-}
 
 .about__first__line {
     display: flex;
@@ -847,4 +842,320 @@ html {
 
 .footer__right__first {
     margin-bottom: 13px;
+}
+
+/* media  */
+@media (max-width: 1450px) {
+    .wrapper {
+        width: 1000px;
+    }
+
+    .opportunities__blocks__block {
+        width: 100%;
+    }
+
+    .opportunities__blocks__text {
+        width: 100%;
+    }
+
+    .header__content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .header__content__text {
+        position: relative;
+        top: 0;
+        left: 0;
+    }
+
+    .online__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 auto;
+        padding-top: 100px;
+    }
+
+    .online__text {
+        width: auto;
+        text-align: center;
+        margin: 0;
+    }
+
+    .online__subtitle {
+        margin-bottom: 20px;
+    }
+
+    .border__line {
+        display: none;
+    }
+
+    .about__first__line {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .about__first__line__title {
+        width: 100%;
+        display: flex;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .about__first__line__subtitle {
+        width: 100%;
+        display: flex;
+        text-align: center;
+        margin-bottom: 10px;
+        font-size: 26px;
+    }
+
+    .online__image__first {
+        object-fit: contain;
+        height: 50%;
+    }
+
+    .online__image {
+        object-fit: contain;
+        height: 50%;
+    }
+
+    .about__second__line {
+        margin-top: 80px;
+        width: 100%;
+    }
+
+    .about__second__line__dash {
+        display: none;
+    }
+
+    .about__second__line__download {
+        display: none;
+    }
+
+    .lang__switcher {
+        display: none;
+    }
+
+    .opportunities {
+        margin-top: 50px;
+    }
+
+    .opportunities__texts {
+        margin-top: 50px;
+    }
+
+    .opportunities__blocks__second {
+        margin-top: 80px;
+    }
+
+    .contact {
+        height: 750px;
+        background-image: url('../static/images/contact.png');
+        background-repeat: no-repeat;
+        background-size: 1013px;
+        background-position: 10% -90%;
+        padding-top: 103px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+/* media for 1024px */
+@media (max-width: 1024px) {
+    .wrapper {
+        width: 90%;
+    }
+
+    .header__content__text {
+        width: 100%;
+        text-align: center;
+    }
+
+    .header__subtitle {
+        margin: 0;
+        text-align: center;
+        width: 100%;
+    }
+
+    .header__subtitle__text {
+        margin: 0;
+        text-align: center;
+    }
+
+    .opportunities__blocks__second {
+        display: flex;
+        flex-direction: column;
+        gap: 80px;
+    }
+
+    .contact {
+        display: flex;
+        flex-direction: row;
+        height: 100%;
+        align-items: center;
+        background-position: 10% -10%;
+    }
+
+    .contact__texts {
+        width: 40%;
+
+    }
+
+    .contact__texts__block {
+        width: 100%;
+    }
+
+}
+
+
+/* for tablet */
+@media (max-width: 768px) {
+    .wrapper {
+        width: 100%;
+    }
+
+    .header__content__text {
+        width: 100%;
+        text-align: center;
+    }
+
+    .header__subtitle {
+        margin: 0;
+        text-align: center;
+        width: 100%;
+    }
+
+    .header__subtitle__text {
+        margin: 0;
+        text-align: center;
+    }
+
+    .online__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 auto;
+        padding-top: 100px;
+    }
+
+    .online__text {
+        width: auto;
+        text-align: center;
+        margin: 0;
+    }
+
+    .online__subtitle {
+        margin-bottom: 20px;
+    }
+
+    .border__line {
+        display: none;
+    }
+
+    .about__first__line {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .about__first__line__title {
+        width: 100%;
+        display: flex;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .about__first__line__subtitle {
+        width: 100%;
+        display: flex;
+        text-align: center;
+        margin-bottom: 10px;
+        font-size: 26px;
+    }
+
+    .online__image__first {
+        object-fit: contain;
+        height: 50%;
+    }
+
+    .online__image {
+        object-fit: contain;
+        height: 50%;
+        width: 100%;
+    }
+
+    .about__second__line {
+        margin-top: 80px;
+        width: 100%;
+    }
+
+    .about__second__line__dash {
+        display: none;
+    }
+
+    .contact__texts {
+        display: none;
+    }
+
+    .about__second__line__download {
+        display: none;
+    }
+
+    .lang__switcher {
+        display: none;
+    }
+
+    .opportunities {
+        margin-top: 50px;
+    }
+
+    .opportunities__texts {
+        margin-top: 50px;
+    }
+
+    .opportunities__blocks__second {
+        margin-top: 80px;
+    }
+
+    .contact {
+        display: flex;
+        flex-direction: row;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 50px;
+        background-position: 10% -10%;
+    }
+
+    .nav__info__item {
+        display: none;
+    }
+
+    .nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+    }
+
+    .logo {
+        margin-bottom: 20px;
+    }
+
+    .header__content {
+        margin-top: 70px;
+    }
+
+    .opportunities__texts__first {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        height: 340px;
+    }
+
 }
