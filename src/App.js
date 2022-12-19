@@ -16,6 +16,58 @@ const generateFlag = (count) => {
 
 function App() {
   const [currentLanguage, setCurrentLanguage] = useState(1);
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [message, setMessage] = useState('');
+  const [files, setFiles] = useState([]);
+  const validate = () => {
+    if (name.length > 0 && email.length > 0 && phone.length > 0) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
+  const addFiles = (e) => {
+    const files = e.target.files;
+    const filesArr = [];
+    for (let i = 0; i < files.length; i++) {
+      filesArr.push(files[i]);
+    }
+    setFiles(filesArr);
+  };
+  const sendEmail = async (e) => {
+    if (!validate()) {
+      alert('Заполните все поля');
+      return;
+    }
+    // const url = 'https://dev.kmbinat.com/send';
+    const response = await fetch('http://localhost:3030/send', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        // cors
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,PATCH,OPTIONS',
+      },
+      body: JSON.stringify({
+        name: name,
+        email: email,
+        phone: phone,
+        message: message,
+        files: files,
+      }),
+    });
+
+    setName('');
+    setEmail('');
+    setPhone('');
+    setMessage('');
+
+    const data = await response.json();
+    console.log(data);
+  };
 
   return (
     <div className='page'>
@@ -29,13 +81,13 @@ function App() {
               <a href='#' className='nav__link nav__main'>
                 {texts[currentLanguage].nav.main}
               </a>
-              <a href='#' className='nav__link nav__other'>
+              <a href='#about' className='nav__link nav__other'>
                 {texts[currentLanguage].nav.about}
               </a>
-              <a href='#' className='nav__link nav__opportunities'>
+              <a href='#opportunity' className='nav__link nav__opportunities'>
                 {texts[currentLanguage].nav.opportunities}
               </a>
-              <a href='#' className='nav__link nav__other'>
+              <a href='#contact' className='nav__link nav__other'>
                 {texts[currentLanguage].nav.contacts}
               </a>
             </div>
@@ -66,7 +118,7 @@ function App() {
                 eng
               </div>
             </div>
-            <div className='nav__info'>
+            {/* <div className='nav__info'>
               <div className='nav__info__item'>
                 <a href='tel:+7707 777 77 77' className='nav__info__link'>
                   +7 707 777 77 77
@@ -95,7 +147,7 @@ function App() {
                   Оставить заявку
                 </a>
               </div>
-            </div>
+            </div> */}
           </nav>
           <div className='header__content'>
             <div className='header__content__text'>
@@ -110,9 +162,7 @@ function App() {
                 </div>
               </div>
             </div>
-            <div className='header__content__image'>
-              <img src={HeaderImage} alt='HeaderImage' />
-            </div>
+            <div className='header__content__image'></div>
           </div>
 
           <div className='online__content'>
@@ -140,7 +190,7 @@ function App() {
             </div>
           </div>
 
-          <div className='about'>
+          <div className='about' id='about'>
             <div className='about__first__line'>
               <div className='about__first__line__title'>
                 {texts[currentLanguage].about.title}
@@ -177,9 +227,9 @@ function App() {
           </div>
         </div>
       </section>
-      <section className='opportunities'>
+      <section className='opportunities' id='opportunity'>
         <div className='flags'>
-          {generateFlag(Math.ceil(window.innerWidth / 52)).map(() => {
+          {generateFlag(Math.floor(window.innerWidth / 52)).map(() => {
             return <div className='flag'></div>;
           })}
         </div>
@@ -363,80 +413,48 @@ function App() {
                 </div>
               </div>
 
-              <div className='contact__form'>
+              <div className='contact__form' id='contact'>
                 <div className='contact__form__title'>
                   {texts[currentLanguage].contact.form.title}
                 </div>
                 <input
                   type='name'
+                  value={name}
+                  onChange={(e) => {
+                    setName(e.target.value);
+                  }}
                   placeholder={texts[currentLanguage].contact.form.name}
                   className='input'
                 />
                 <input
                   type='phone'
+                  value={phone}
+                  onChange={(e) => {
+                    setPhone(e.target.value);
+                  }}
                   placeholder={texts[currentLanguage].contact.form.phone}
                   className='input'
                 />
                 <input
                   type='email'
+                  value={email}
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                  }}
                   placeholder={texts[currentLanguage].contact.form.email}
                   className='input'
                 />
                 <textarea
                   type='text'
+                  value={message}
+                  onChange={(e) => {
+                    setMessage(e.target.value);
+                  }}
                   placeholder={texts[currentLanguage].contact.form.message}
                   className='input textarea'
                 />
                 <div className='buttons'>
-                  <div className='attach__button'>
-                    <svg
-                      width='24'
-                      height='20'
-                      viewBox='0 0 24 20'
-                      fill='none'
-                      xmlns='http://www.w3.org/2000/svg'
-                    >
-                      <g id='Icon/Outline/attach-2'>
-                        <path
-                          id='Mask'
-                          fillRule='evenodd'
-                          clipRule='evenodd'
-                          d='M9.2935 17.0863C7.6375 17.0863 6.0635 16.5444 4.8615 15.5607C2.4735 13.6055 2.3755 10.5056 4.6425 8.64971L12.0285 2.60443C12.7975 1.97468 13.8355 1.62726 14.9505 1.62726C16.1435 1.62726 17.2775 2.01699 18.1425 2.72485C19.8635 4.13324 19.9295 6.37154 18.2885 7.71404L10.8935 13.7585C10.4145 14.1515 9.7695 14.3671 9.0775 14.3671C8.3465 14.3671 7.6535 14.1295 7.1275 13.6991C6.0745 12.8358 6.0415 11.46 7.0545 10.6301L13.8795 5.05265C14.2695 4.7337 14.9015 4.73208 15.2935 5.04939C15.6845 5.36671 15.6865 5.88174 15.2965 6.19987L8.4725 11.7781C8.2325 11.975 8.2655 12.3224 8.5465 12.5519C8.6925 12.6715 8.8865 12.7398 9.0775 12.7398C9.1875 12.7398 9.3455 12.7179 9.4755 12.6113L16.8705 6.56682C17.7375 5.85651 17.6725 4.64827 16.7245 3.87207C15.8175 3.13004 14.2785 3.07145 13.4465 3.75165L6.0605 9.79693C4.5665 11.0198 4.6645 13.0913 6.2805 14.4135C7.1035 15.088 8.1735 15.459 9.2935 15.459C10.2945 15.459 11.2225 15.1514 11.9045 14.5933L19.2915 8.54801C19.6805 8.22988 20.3135 8.22744 20.7055 8.54475C21.0965 8.86207 21.0985 9.37629 20.7095 9.69523L13.3225 15.7405C12.2625 16.6078 10.8315 17.0863 9.2935 17.0863Z'
-                          fill='#231F20'
-                        />
-                        <mask
-                          id='mask0_11_759'
-                          style={{ maskType: 'alpha' }}
-                          maskUnits='userSpaceOnUse'
-                          x='3'
-                          y='1'
-                          width='18'
-                          height='17'
-                        >
-                          <path
-                            id='Mask_2'
-                            fillRule='evenodd'
-                            clipRule='evenodd'
-                            d='M9.2935 17.0863C7.6375 17.0863 6.0635 16.5444 4.8615 15.5607C2.4735 13.6055 2.3755 10.5056 4.6425 8.64971L12.0285 2.60443C12.7975 1.97468 13.8355 1.62726 14.9505 1.62726C16.1435 1.62726 17.2775 2.01699 18.1425 2.72485C19.8635 4.13324 19.9295 6.37154 18.2885 7.71404L10.8935 13.7585C10.4145 14.1515 9.7695 14.3671 9.0775 14.3671C8.3465 14.3671 7.6535 14.1295 7.1275 13.6991C6.0745 12.8358 6.0415 11.46 7.0545 10.6301L13.8795 5.05265C14.2695 4.7337 14.9015 4.73208 15.2935 5.04939C15.6845 5.36671 15.6865 5.88174 15.2965 6.19987L8.4725 11.7781C8.2325 11.975 8.2655 12.3224 8.5465 12.5519C8.6925 12.6715 8.8865 12.7398 9.0775 12.7398C9.1875 12.7398 9.3455 12.7179 9.4755 12.6113L16.8705 6.56682C17.7375 5.85651 17.6725 4.64827 16.7245 3.87207C15.8175 3.13004 14.2785 3.07145 13.4465 3.75165L6.0605 9.79693C4.5665 11.0198 4.6645 13.0913 6.2805 14.4135C7.1035 15.088 8.1735 15.459 9.2935 15.459C10.2945 15.459 11.2225 15.1514 11.9045 14.5933L19.2915 8.54801C19.6805 8.22988 20.3135 8.22744 20.7055 8.54475C21.0965 8.86207 21.0985 9.37629 20.7095 9.69523L13.3225 15.7405C12.2625 16.6078 10.8315 17.0863 9.2935 17.0863Z'
-                            fill='white'
-                          />
-                        </mask>
-                        <g mask='url(#mask0_11_759)'>
-                          <g id='&#240;&#159;&#142;&#168; Color'>
-                            <rect
-                              id='Base'
-                              width='24'
-                              height='19.5272'
-                              fill='#0D1C2E'
-                            />
-                          </g>
-                        </g>
-                      </g>
-                    </svg>
-                    {texts[currentLanguage].contact.form.attach}
-                  </div>
-                  <div className='divider'>/</div>
-                  <div className='send__button'>
+                  <div className='send__button' onClick={sendEmail}>
                     {texts[currentLanguage].contact.form.send}
                   </div>
                 </div>
@@ -450,17 +468,17 @@ function App() {
               <div className='logo'>
                 <img src={Logo} alt='Logo' />
               </div>
-              <div className='nav__links'>
+              <div className='nav__links footer__nav__links'>
                 <a href='#' className='nav__link nav__main'>
                   {texts[currentLanguage].nav.main}
                 </a>
-                <a href='#' className='nav__link nav__other'>
+                <a href='#about' className='nav__link nav__other'>
                   {texts[currentLanguage].nav.about}
                 </a>
-                <a href='#' className='nav__link nav__opportunities'>
+                <a href='#opportunity' className='nav__link nav__opportunities'>
                   {texts[currentLanguage].nav.opportunities}
                 </a>
-                <a href='#' className='nav__link nav__other'>
+                <a href='#contact' className='nav__link nav__other'>
                   {texts[currentLanguage].nav.contacts}
                 </a>
               </div>
