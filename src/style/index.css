@@ -314,6 +314,7 @@ html {
     font-size: 20px;
     line-height: 130%;
     color: #7A7A7A;
+    text-align: left;
 }
 
 .online__text__bottom {
@@ -1086,6 +1087,18 @@ html {
         width: 100%;
     }
 
+    .mobile__text {
+        display: block !important;
+        color: #000;
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 130%;
+        margin-top: 70px;
+        margin-bottom: 70px;
+    }
+
     .input {
         width: 100%;
         height: 42px;
@@ -1114,7 +1127,8 @@ html {
 
     .about {
         background: #F9F6F2;
-        width: 80% !important;
+        width: 90% !important;
+        margin-bottom: 0px;
     }
 
     .about__first__line {
@@ -1140,7 +1154,7 @@ html {
         justify-content: flex-start;
         align-items: flex-start;
         color: #A067A9;
-        padding-left: 20px;
+        padding-left: 7px;
     }
 
     .online__img {
@@ -1155,6 +1169,7 @@ html {
 
     .online__title {
         font-size: 36px;
+        text-align: left;
     }
 
     .online__subtitle {
@@ -1167,6 +1182,7 @@ html {
 
     .online__text__bottom {
         margin: 0;
+        text-align: left;
     }
 
     .nav__links {
@@ -1191,6 +1207,7 @@ html {
     .header__subtitle__text {
         margin: 0;
         text-align: center;
+        font-size: 13px;
     }
 
     .online__content {
@@ -1324,23 +1341,38 @@ html {
     }
 
     .div__start {
-        font-size: 26px;
+        font-size: 13px;
     }
 
     .header__subtitle__text {
         text-align: left;
+        padding-left: 5px;
+    }
+
+    .opportunities__texts__title {
+        font-size: 34px;
+        color: #A067A9;
+    }
+
+    .online__text__bottom {
+        font-size: 13px;
+    }
+
+    .wrapper {
+        /* width: 90%; */
+        width: 341px;
     }
 
     .nav {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        width: 90%;
         margin: 0 auto;
     }
 
     .header__content__text {
-        font-size: 28px;
+        font-size: 34px;
+        text-align: left;
     }
 
     .header__content {
@@ -1348,53 +1380,41 @@ html {
     }
 
     .firstSecondLine {
-        font-size: 28px;
+        font-size: 34px;
     }
 
     .header__span {
-        font-size: 36px;
+        font-size: 34px;
+        font-family: "Grotesk";
+        font-weight: 700;
+        font-style: normal;
     }
 
-    /* .footer__nav {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    } */
-
-    /* .footer__wrapper {
-        display: flex;
-        flex-direction: column;
-    } */
-
-    .header__span {
-        font-style: italic;
-        font-weight: 400;
-    }
 
     .nav__links {
         display: none;
     }
 
     .about__first__line__title {
-        font-size: 25px;
+        font-size: 34px;
     }
 
     .about__title {
-        font-size: 25px;
+        font-size: 34px;
     }
 
     .about__first__line__subtitle {
-        font-size: 20px;
+        font-size: 13px;
     }
 
     .header__subtitle {
-        margin-top: 20px;
+        margin-top: 50px;
     }
 
 
     .about__second__line {
         width: 100%;
-        font-size: 36px;
+        font-size: 34px;
     }
 
     input {
@@ -1402,7 +1422,7 @@ html {
     }
 
     .about__second__line__item {
-        font-size: 36px;
+        font-size: 34px;
     }
 
     .opportunities__texts__block {
@@ -1444,7 +1464,7 @@ html {
     }
 
     .opportunities__texts__title {
-        text-align: center;
+        text-align: left;
     }
 
     .opportunities__texts__subtitle {
@@ -1491,6 +1511,76 @@ html {
     .nav__links__footer {
         margin-top: 30px;
     }
+
+    .right_block {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .opportunities__texts__subtitle {
+        text-align: left;
+        padding-bottom: 10px;
+    }
+
+    .opportunities__texts__right {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .dashed__line {
+        display: none;
+
+    }
+
+    .dashed__line__mobile {
+        display: block;
+        font-family: 'Roboto';
+        font-style: italic;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 130%;
+        /* identical to box height, or 26px */
+        letter-spacing: 0.535em;
+
+        color: #A7A7A7;
+    }
+
+    .opportunities__texts__subtitle {
+        color: #3C3C3C;
+    }
+
+    .opportunities__texts__name {
+        color: #838383;
+        font-size: 13px;
+        font-weight: bold;
+    }
+
+    .opportunities__texts__position {
+        color: #838383;
+        font-size: 13px;
+    }
+
+    .contact__form {
+        width: 100%;
+    }
+
+    .opportunities__texts {
+        background: #fff;
+    }
+
+    .contact {
+        background: #fff;
+    }
+
+    .about {
+        padding-top: 46px;
+        padding-bottom: 56px;
+    }
 }
 
 
@@ -1520,4 +1610,8 @@ html {
 
 .nav__links__footer {
     cursor: pointer;
+}
+
+.mobile__text {
+    display: none;
 }

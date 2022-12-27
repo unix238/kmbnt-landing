@@ -192,6 +192,12 @@ function App() {
             </div>
           </div>
         </div>
+        <div className='wrapper'>
+          <div className='mobile__text'>
+            Здесь вы сможете найти покупателя своих работ, формировать портфолио
+            и в целом начать карьеру коммерчески успешного творца
+          </div>
+        </div>
       </section>
       <section className='opportunities' id='opportunity'>
         {/* <div className='flags'>
@@ -209,9 +215,9 @@ function App() {
                 <div className='opportunities__texts__title'>
                   {texts[currentLanguage].opportunities.title2}
                 </div>
-                <div className='opportunities__texts__subtitle'>
+                {/* <div className='opportunities__texts__subtitle'>
                   {texts[currentLanguage].opportunities.subtitle1}
-                </div>
+                </div> */}
               </div>
 
               <div className='right_block'>
@@ -224,6 +230,8 @@ function App() {
                 </div>
                 <div className='opportunities__texts__right'>
                   <div className='opportunities__texts__person'>
+                    <div className='dashed__line__mobile'>---------</div>
+
                     <div className='opportunities__texts__name'>
                       {texts[currentLanguage].opportunities.name}
                     </div>
@@ -295,22 +303,7 @@ function App() {
               </div>
             </div>
 
-            <div className='opportunities__blocks__third'>
-              <div className='opportunities__blocks__help'>
-                <div className='info__text'>
-                  {texts[currentLanguage].opportunities.questions}
-                  <br />
-                  <span className='email'>info@kmbinat.kz</span> и мы
-                  {texts[currentLanguage].opportunities.answer}
-                </div>
-              </div>
-
-              <div className='opportunities__blocks__buttons'>
-                <div className='opportunities__blocks__button'>
-                  {texts[currentLanguage].opportunities.contact2}
-                </div>
-              </div>
-            </div>
+            <div className='opportunities__blocks__third'></div>
             <div className='contact'>
               <div className='contact__texts'>
                 <div className='contact__texts__block'>
@@ -362,7 +355,7 @@ function App() {
                     <div className='contact__email'>
                       +7 (701) 223-40-82
                       <br />
-                      info@kmbinat.kz
+                      hello@kmbinat.com
                     </div>
                   </div>
                 </div>
@@ -524,7 +517,7 @@ function App() {
                 {texts[currentLanguage].footer.subtitle3}
               </div>
               <div className='footer__right__third'>
-                +7 (777) 123 4567 / info@kmbinat.kz
+                +7 (701) 223-40-82 / hello@kmbinat.com
               </div>
             </div>
           </div>

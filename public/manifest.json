@@ -1,6 +1,7 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "name": "Kombinat Marketplace",
+  "short_name": "Kombinat",
+  "description": "Shop for all your favorite products in one place at Kombinat, the premier online marketplace.",
   "icons": [
     {
       "src": "favicon.ico",
