@@ -8,6 +8,7 @@ export const texts = [
     },
     header: {
       firstLine: 'aggregator for monetization of ',
+      firstSecondLine: 'creativity',
       secondLine: 'creators',
       subtitle:
         'KMBINAT is the first domestic marketplace that brings together artisans / designers / artists',
@@ -86,7 +87,8 @@ export const texts = [
       contacts: 'Контакты',
     },
     header: {
-      firstLine: 'агрегатор для монетизации ',
+      firstLine: 'агрегатор для ',
+      firstSecondLine: 'монетизации',
       secondLine: 'творцов',
       subtitle:
         'KMBINAT — первый отечественный маркетплейс, который объединил в себе ремесленников / дизайнеров / художников',
@@ -165,6 +167,7 @@ export const texts = [
     },
     header: {
       firstLine: 'жасаушының монетизациясының ',
+      firstSecondLine: 'құралдары',
       secondLine: 'агрегаторы',
       subtitle:
         'KMBINAT – қолөнершілерді/дизайнерлерді/суретшілерді біріктіретін алғашқы отандық нарық',
