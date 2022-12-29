@@ -1244,8 +1244,39 @@ html {
     }
 
 
-    .contact__texts {
+    .contact__texts__title,
+    .contact__texts__subtitle,
+    .contact__texts__warning {
         display: none;
+    }
+
+    .contact__texts {
+        margin-top: 31px;
+        padding-top: 21px;
+        width: 100%;
+        border-top: 2px solid #D9D9D9;
+    }
+
+    .links {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .contact__links {
+        display: flex;
+        flex-direction: row-reverse;
+        width: 100%;
+        height: 100%;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 12px;
+        margin: 0 auto;
+    }
+
+    .contact__email {
+        font-size: 12px;
     }
 
     .about__second__line__download {
@@ -1270,7 +1301,7 @@ html {
 
     .contact {
         display: flex;
-        flex-direction: row;
+        flex-direction: column-reverse;
         height: 100%;
         align-items: center;
         justify-content: center;
@@ -1614,4 +1645,11 @@ html {
 
 .mobile__text {
     display: none;
+}
+
+.links {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
 }
